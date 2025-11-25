@@ -4,7 +4,9 @@
 
 -- LSP Server to use for PHP.
 -- Set to "intelephense" to use intelephense instead of phpactor.
-vim.g.lazyvim_php_lsp = "phptools"
+vim.g.lazyvim_php_lsp = "intelephense"
 vim.g.lazyvim_ruby_lsp = "ruby_lsp"
 
 vim.g.sidekick_nes = false
+
+vim.o.list = false

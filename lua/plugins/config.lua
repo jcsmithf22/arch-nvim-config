@@ -15,9 +15,6 @@ return {
         },
       },
       dashboard = {
-        -- your dashboard configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
         sections = {
           { section = "header" },
           { section = "keys", gap = 0, padding = 1 },
@@ -28,6 +25,7 @@ return {
 
   {
     dir = "/home/siah/developer/lua/dracula_pro",
+    enabled = false,
     name = "dracula_pro",
     lazy = false, -- Load immediately
     priority = 1000,
@@ -35,15 +33,6 @@ return {
       flavour = "default",
     },
   },
-
-  -- { "nuvic/flexoki-nvim", name = "flexoki" },
-  -- { "kepano/flexoki-neovim", name = "flexoki" },
-  -- {
-  --   "cpplain/flexoki.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {},
-  -- },
 
   {
     "LazyVim/LazyVim",
@@ -102,6 +91,7 @@ return {
 
               extended_filetypes = {
                 ruby = { "rails" },
+                gotmpl = { "html" },
               },
             },
           },
@@ -111,16 +101,34 @@ return {
   },
 
   {
+    "windwp/nvim-ts-autotag",
+
+    opts = {
+      aliases = {
+        ["gotmpl"] = "html",
+      },
+    },
+  },
+
+  {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = {
       servers = {
-        phptools = {
-          init_options = {
-            ["0"] = "BEA6372325zpNTJjU4xJXjVYrFTD9xaQPM", --optional premium license validation from https://www.devsense.com/purchase/validation
-          },
+        herb_ls = {
+          filetypes = { "eruby" },
         },
+        -- phptools = {
+        --   init_options = {
+        --     ["0"] = "BEA6372325zpNTJjU4xJXjVYrFTD9xaQPM", --optional premium license validation from https://www.devsense.com/purchase/validation
+        --   },
+        -- },
       },
     },
+  },
+
+  {
+    "mfussenegger/nvim-lint",
+    enabled = false,
   },
 }

@@ -12,3 +12,10 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.indentkeys:remove(".")
   end,
 })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.tmpl",
+  callback = function()
+    vim.bo.filetype = "gotmpl"
+  end,
+})
