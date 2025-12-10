@@ -10,3 +10,5 @@ vim.g.lazyvim_ruby_lsp = "ruby_lsp"
 vim.g.sidekick_nes = false
 
 vim.o.list = false
+
+vim.g.root_spec = { "lsp", { ".git", "lua", "deno.json" }, "cwd" }
